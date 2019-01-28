@@ -12,7 +12,10 @@
             id:在整个配置文件中id值必须唯一，其值与dao层类中的方法名保持一致
             resultType：指定当前sql查询语句返回的数据类型。类型不是为sql语句的最终类型，而是某一条数据的类型
      -->
-    <select id="getUser" resultType="Map">
+    <select id="getUser" resultType="java.lang.String">
 		SELECT name FROM user
 	</select>
+    <select id="getAccount" resultType="Map">
+        select username,password from accounts where id=1
+    </select>
 </mapper>

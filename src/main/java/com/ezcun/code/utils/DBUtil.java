@@ -5,10 +5,13 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * @author Huangtian
@@ -27,13 +30,16 @@ public class DBUtil {
 
     SqlSession ss = ssf.openSession();
 
-    //@DataProvider(name = "getUser")
-    //public void getUser() {
-    //    List<Map<String, Object>> userList = ss.selectList("com.ezcun.code.utils.DBUtil.getUser");
-    //}
+    @DataProvider
+    public Object[] getUser() {
+        List<String> list = ss.selectList("com.ezcun.code.utils.DBUtil.getUser");
+        Object[] o = new Object[]{list};
+        return o;
+    }
 
-    //@Test(dataProvider = "getUser")
-    //public void testMethod(Object user) {
-    //    System.out.println(user);
-    //}
+    @Test(dataProvider = "getUser")
+    public void Test(Object s) {
+        System.out.println(s);
+    }
+
 }

@@ -1,9 +1,8 @@
-package com.ezcun.code.page;
+package com.ezcun.code.pages;
 
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Reporter;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -36,7 +35,6 @@ public class LoginPage extends Page {
     }
 
     @Test
-    @Parameters({"username", "password"})
     public void login(String username, String password) {
         loginele.click();
         loginName.sendKeys(username);

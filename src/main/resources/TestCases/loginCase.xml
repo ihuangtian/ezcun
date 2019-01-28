@@ -8,7 +8,7 @@
     <parameter name="password" value="htht2323"/>
     <test name="loginTest">
         <classes>
-            <class name="com.ezcun.code.page.LoginPage"/>
+            <class name="com.ezcun.code.pages.LoginPage"/>
         </classes>
     </test>
 </suite>
