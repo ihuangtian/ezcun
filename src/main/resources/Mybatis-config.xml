@@ -12,15 +12,15 @@
             <!-- 配置数据源 -->
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/数据库名"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/course"/>
                 <property name="username" value="root"/>
-                <property name="password" value="root"/>
+                <property name="password" value="123456"/>
             </dataSource>
         </environment>
     </environments>
 
     <!-- 关联局部配置文件 -->
     <mappers>
-        <mapper resource="cnm/xxx/xxx/xxx.xml（局部配置文件路径）"/>
+        <mapper resource="mappers/userMapping.xml"/>
     </mappers>
 </configuration>
